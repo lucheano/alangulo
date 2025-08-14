@@ -298,52 +298,12 @@
         }
     </style>
 
-<script>document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://bwapipub.com/all-games/es.json?type=live&site_id=betwinner&id=2es7")
-        .then(response => response.json())
-        .then(data => {
-            if (data.success && data.payload.length > 0) {
-                data.payload.forEach(match => {
-                    let matchContainer = document.createElement("div");
-                    matchContainer.classList.add("match-container");
 
-                    matchContainer.innerHTML = `
-                        <span class='time'>${new Date(parseInt(match.Start.replace("/Date(", "").replace(")/", ""))).toLocaleTimeString()}</span>
-                        <div class='team-container'>
-                            <span class='team-name'>${match.Home}</span>
-                        </div>
-                        <span class='vs'>VS</span>
-                        <div class='team-container'>
-                            <span class='team-name'>${match.Away}</span>
-                        </div>
-                        <div class='odds-container'>
-                            <span>1: <strong>${match.H ?? "-"}</strong></span>
-                            <span>X: <strong>${match.D ?? "-"}</strong></span>
-                            <span>2: <strong>${match.A ?? "-"}</strong></span>
-                            <a href='${match.Uri1X}' target='_blank' class='bet-link'>Apostar</a>
-                        </div>
-                    `;
-
-                    document.getElementById("odds-section").appendChild(matchContainer);
-                });
-            }
-        })
-        .catch(error => console.error("Error al obtener las cuotas:", error));
-});
-</script>
 
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"96f19bff9815da0e","version":"2025.8.0","r":1,"token":"ff4e46314d634b019596c111d99b3744","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
 </html>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-0VHCVL6YRW"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-0VHCVL6YRW');
-</script>
 <article id="post-15" class="post-15 page type-page status-publish hentry">
 <div class="entry-content" itemprop="mainContentOfPage">
 
